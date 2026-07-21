@@ -1,0 +1,1502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:common="https://soap.api.nav.gov.hu/definitions/model/2.0/common/1.0"
+        xmlns:meta="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+        xmlns:tns="https://soap.api.nav.gov.hu/definitions/model/2.0/NAV_F08/1.11"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="https://soap.api.nav.gov.hu/definitions/model/2.0/NAV_F08/1.11">
+   <import namespace="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+           schemaLocation="form_xsd_metaschema.xsd"/>
+   <import namespace="https://soap.api.nav.gov.hu/definitions/model/2.0/common/1.0"
+           schemaLocation="common.xsd"/>
+   <element name="Doc_NAV_F08"
+            type="tns:Doc_NAV_F08_Type"
+            meta:metaType="DocMetaType">
+      <annotation>
+         <documentation>Fémkereskedelmi engedélyköteles anyag vételárával, illetve a kifizetett ellenértékkel kapcsolatos írásbeli nyilatkozattétel</documentation>
+      </annotation>
+      <xs:unique name="uniqueFileId_Attachment_1">
+         <xs:selector xpath="Form_NAV_F08/Attachment_1"/>
+         <xs:field xpath="fileId"/>
+      </xs:unique>
+      <xs:unique name="uniqueFileId_Attachment_2">
+         <xs:selector xpath="Form_NAV_F08/Attachment_2"/>
+         <xs:field xpath="fileId"/>
+      </xs:unique>
+   </element>
+   <simpleType name="Enum_NAV_F08_0A0001F007A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="utca"/>
+         <enumeration value="út"/>
+         <enumeration value="tér"/>
+         <enumeration value="köz"/>
+         <enumeration value="akna"/>
+         <enumeration value="akna-alsó"/>
+         <enumeration value="akna-felső"/>
+         <enumeration value="alagút"/>
+         <enumeration value="alsórakpart"/>
+         <enumeration value="arborétum"/>
+         <enumeration value="autópálya"/>
+         <enumeration value="autóút"/>
+         <enumeration value="állat- és növ.kert"/>
+         <enumeration value="állomás"/>
+         <enumeration value="árnyék"/>
+         <enumeration value="árok"/>
+         <enumeration value="átjáró"/>
+         <enumeration value="barakképület"/>
+         <enumeration value="barlang"/>
+         <enumeration value="bánya"/>
+         <enumeration value="bányatelep"/>
+         <enumeration value="bástya"/>
+         <enumeration value="bástyája"/>
+         <enumeration value="bejáró"/>
+         <enumeration value="bekötőút"/>
+         <enumeration value="csárda"/>
+         <enumeration value="csónakházak"/>
+         <enumeration value="domb"/>
+         <enumeration value="dűlő"/>
+         <enumeration value="dűlősor"/>
+         <enumeration value="dűlőterület"/>
+         <enumeration value="dűlőút"/>
+         <enumeration value="egyetemváros"/>
+         <enumeration value="egyéb"/>
+         <enumeration value="elágazás"/>
+         <enumeration value="emlékút"/>
+         <enumeration value="erdészház"/>
+         <enumeration value="erdészlak"/>
+         <enumeration value="erdő"/>
+         <enumeration value="erdősor"/>
+         <enumeration value="fasor"/>
+         <enumeration value="fasora"/>
+         <enumeration value="felső"/>
+         <enumeration value="forduló"/>
+         <enumeration value="föld"/>
+         <enumeration value="főmérnökség"/>
+         <enumeration value="főtér"/>
+         <enumeration value="főút"/>
+         <enumeration value="gát"/>
+         <enumeration value="gátőrház"/>
+         <enumeration value="gátsor"/>
+         <enumeration value="gyár"/>
+         <enumeration value="gyártelep"/>
+         <enumeration value="gyárváros"/>
+         <enumeration value="gyümölcsös"/>
+         <enumeration value="hajóállomás"/>
+         <enumeration value="határsor"/>
+         <enumeration value="határút"/>
+         <enumeration value="ház"/>
+         <enumeration value="hegy"/>
+         <enumeration value="hegyhát"/>
+         <enumeration value="hegyhátdűlő"/>
+         <enumeration value="hegyhátköz"/>
+         <enumeration value="hídfő"/>
+         <enumeration value="hrsz."/>
+         <enumeration value="iskola"/>
+         <enumeration value="játszótér"/>
+         <enumeration value="kapu"/>
+         <enumeration value="kastély"/>
+         <enumeration value="kert"/>
+         <enumeration value="kertsor"/>
+         <enumeration value="kilátó"/>
+         <enumeration value="kioszk"/>
+         <enumeration value="kocsiszín"/>
+         <enumeration value="kolónia"/>
+         <enumeration value="korzó"/>
+         <enumeration value="kör"/>
+         <enumeration value="körönd"/>
+         <enumeration value="körtér"/>
+         <enumeration value="körút"/>
+         <enumeration value="körvasútsor"/>
+         <enumeration value="körzet"/>
+         <enumeration value="kultúrpark"/>
+         <enumeration value="kunyhó"/>
+         <enumeration value="kút"/>
+         <enumeration value="kültelek"/>
+         <enumeration value="lakóház"/>
+         <enumeration value="lakónegyed"/>
+         <enumeration value="lakópark"/>
+         <enumeration value="lakótelep"/>
+         <enumeration value="lejáró"/>
+         <enumeration value="lejtő"/>
+         <enumeration value="lépcső"/>
+         <enumeration value="liget"/>
+         <enumeration value="major"/>
+         <enumeration value="malom"/>
+         <enumeration value="menedékház"/>
+         <enumeration value="mélyút"/>
+         <enumeration value="munkásszálló"/>
+         <enumeration value="műút"/>
+         <enumeration value="oldal"/>
+         <enumeration value="orom"/>
+         <enumeration value="őrház"/>
+         <enumeration value="őrházak"/>
+         <enumeration value="őrházlak"/>
+         <enumeration value="park"/>
+         <enumeration value="parkja"/>
+         <enumeration value="part"/>
+         <enumeration value="pálya"/>
+         <enumeration value="pályaudvar"/>
+         <enumeration value="piac"/>
+         <enumeration value="pihenő"/>
+         <enumeration value="pince"/>
+         <enumeration value="pincesor"/>
+         <enumeration value="puszta"/>
+         <enumeration value="rakpart"/>
+         <enumeration value="repülőtér"/>
+         <enumeration value="rész"/>
+         <enumeration value="rét"/>
+         <enumeration value="sarok"/>
+         <enumeration value="sánc"/>
+         <enumeration value="sávház"/>
+         <enumeration value="sétány"/>
+         <enumeration value="sor"/>
+         <enumeration value="sora"/>
+         <enumeration value="sportpálya"/>
+         <enumeration value="sporttelep"/>
+         <enumeration value="stadion"/>
+         <enumeration value="strandfürdő"/>
+         <enumeration value="sugárút"/>
+         <enumeration value="szállás"/>
+         <enumeration value="szállások"/>
+         <enumeration value="szer"/>
+         <enumeration value="szél"/>
+         <enumeration value="sziget"/>
+         <enumeration value="szivattyútelep"/>
+         <enumeration value="szőlő"/>
+         <enumeration value="szőlőhegy"/>
+         <enumeration value="szőlők"/>
+         <enumeration value="tag"/>
+         <enumeration value="tanya"/>
+         <enumeration value="tanyák"/>
+         <enumeration value="telep"/>
+         <enumeration value="temető"/>
+         <enumeration value="tere"/>
+         <enumeration value="tető"/>
+         <enumeration value="télikikötő"/>
+         <enumeration value="tömb"/>
+         <enumeration value="turistaház"/>
+         <enumeration value="udvar"/>
+         <enumeration value="utak"/>
+         <enumeration value="utcája"/>
+         <enumeration value="útja"/>
+         <enumeration value="útőrház"/>
+         <enumeration value="üdülő"/>
+         <enumeration value="üdülő-part"/>
+         <enumeration value="üdülő-sor"/>
+         <enumeration value="üdülő-telep"/>
+         <enumeration value="vadaskert"/>
+         <enumeration value="vadászház"/>
+         <enumeration value="vasútállomás"/>
+         <enumeration value="vasútimegálló"/>
+         <enumeration value="vasútiőrház"/>
+         <enumeration value="vasútsor"/>
+         <enumeration value="vágóhíd"/>
+         <enumeration value="vár"/>
+         <enumeration value="várkerület"/>
+         <enumeration value="várköz"/>
+         <enumeration value="város"/>
+         <enumeration value="vezetőút"/>
+         <enumeration value="villasor"/>
+         <enumeration value="vitorláskikötő"/>
+         <enumeration value="vízmű"/>
+         <enumeration value="völgy"/>
+         <enumeration value="zsilip"/>
+         <enumeration value="zug"/>
+         <enumeration value="u."/>
+         <enumeration value="u"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_NAV_F08_0A0001G001A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="HU311500"/>
+         <enumeration value="HU211000"/>
+         <enumeration value="HU521000"/>
+         <enumeration value="HU411000"/>
+         <enumeration value="HU511000"/>
+         <enumeration value="HU821000"/>
+         <enumeration value="HU611000"/>
+         <enumeration value="HU711000"/>
+         <enumeration value="HU421000"/>
+         <enumeration value="HU321000"/>
+         <enumeration value="HU160000"/>
+         <enumeration value="HU102000"/>
+         <enumeration value="HU621000"/>
+         <enumeration value="HU831000"/>
+         <enumeration value="HU811000"/>
+         <enumeration value="HU221000"/>
+         <enumeration value="HU721000"/>
+         <enumeration value="HU231000"/>
+         <enumeration value="HU911000"/>
+         <enumeration value="HU631000"/>
+         <enumeration value="HU921000"/>
+      </restriction>
+   </simpleType>
+   <complexType name="Doc_NAV_F08_Type">
+      <annotation>
+         <documentation>A teljes bizonylat szerkezetet leíró típus</documentation>
+      </annotation>
+      <sequence>
+         <element name="Form_NAV_F08"
+                  type="tns:Form_NAV_F08_Type"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>NAV_F08 részbizonylat</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Form_NAV_F08_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány NAV_F08 részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_NAV_F08_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Azonosítás</documentation>
+            </annotation>
+         </element>
+         <element name="Block_120010"
+                  type="tns:Block_NAV_F08_120010_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>NAV_F08-01</documentation>
+            </annotation>
+         </element>
+         <element name="Attachment_1"
+                  type="common:AttachmentType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"
+                  meta:metaType="AttachmentMetaType">
+            <annotation>
+               <documentation>Csatolmány; File Extensions:*</documentation>
+            </annotation>
+         </element>
+         <element name="Attachment_2"
+                  type="common:AttachmentType"
+                  minOccurs="0"
+                  maxOccurs="unbounded"
+                  meta:metaType="AttachmentMetaType">
+            <annotation>
+               <documentation>VAM_PDF_JPG; File Extensions:PDF;JPG;JPEG</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_NAV_F08_120001_Type">
+      <annotation>
+         <documentation>Azonosítás</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120002"
+                  type="tns:FieldGroup_NAV_F08_120002_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Azonosító adatok</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="Block_NAV_F08_120010_Type">
+      <annotation>
+         <documentation>NAV_F08-01</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120011"
+                  type="tns:FieldGroup_NAV_F08_120011_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Piaci érték/ ellenérték</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_NAV_F08_120002_Type">
+      <annotation>
+         <documentation>Azonosító adatok</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001F001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószáma: (adoig)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Engedélyszáma: (engsz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="13"/>
+                  <pattern value="[A-Z0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Név (nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Irányítószám (irszam)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Város / Község (varos)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Közterület neve (kozternev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="254"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F007A"
+                  minOccurs="0"
+                  type="tns:Enum_NAV_F08_0A0001F007A"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Közterület jellege (kozterjelleg)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001F008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Házszám (hsz)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F009A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Épület (ep)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F010A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Lépcsőház (lh)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F011A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Emelet (em)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001F012A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Ajtó (ajto)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001G001A"
+                  minOccurs="0"
+                  type="tns:Enum_NAV_F08_0A0001G001A"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Címzett szerv: (cimzett_szerv)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001G002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(cimzett_szerv_név)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="250"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001G003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(apehterkod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001G004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adatszolgáltatást meghatározó döntés iktatószáma : (iktatószám)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001G005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Időszak: (év hó) (F08_időszak)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="6"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001H001A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Hiánypótlás (bHIANYPOTLAS)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H002A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Javítás (bJAVITAS)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001H003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Hivatkozott ügyszám: (hivugyszam)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001I001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Helység (kelthely)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001I002A"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Kelt (keltdat)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001I003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Bejelentő azonosító (bejadoazon)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_NAV_F08_120011_Type">
+      <annotation>
+         <documentation>Piaci érték/ ellenérték</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0B0001C001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(___38308)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(___38309)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0001AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev01)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0001BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz01)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0001CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny01)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0002AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev02)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0002BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz02)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0002CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny02)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0003AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev03)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0003BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz03)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0003CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny03)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0004AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev04)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0004BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz04)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0004CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny04)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0005AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev05)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0005BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz05)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0005CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny05)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0006AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev06)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0006BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz06)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0006CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny06)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0007AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev07)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0007BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz07)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0007CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny07)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0008AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev08)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0008BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz08)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0008CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny08)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0009AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev09)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0009BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz09)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0009CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny09)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0010AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev10)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0010BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz10)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0010CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny10)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0011AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev11)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0011BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz11)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0011CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny11)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0012AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev12)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0012BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz12)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0012CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny12)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0013AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev13)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0013BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz13)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0013CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny13)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0014AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev14)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0014BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz14)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0014CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny14)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0015AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev15)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0015BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz15)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0015CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny15)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0016AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev16)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0016BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz16)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0016CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny16)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0017AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0017BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0017CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny17)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0018AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev18)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0018BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz18)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0018CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny18)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0019AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev19)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0019BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz19)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0019CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny19)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0020AA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Fémkereskedelmi engedélyköteles anyag (fémekr_anyag_megnev20)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0020BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>(fémekr_anyag_vtsz20)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="\P{C}+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0B0001C0020CA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;Jogi személyeket érintő@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;fémkereskedelmi engedélyköteles@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;anyag vételára/ a koncessziós@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@}{@fc000000;{@ffLiberation Sans;{@fs11;{@fb;@}@}@}@} {@fc000000;{@ffLiberation Sans;{@fs11;{@fb;társaság által kifizetett ellenérték@}@}@}@} (fémekr_anyag_menny20)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+</schema>
